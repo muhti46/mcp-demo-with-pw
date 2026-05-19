@@ -1,0 +1,33 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - list [ref=e3]:
+      - listitem [ref=e4]:
+        - link "Home" [ref=e5] [cursor=pointer]:
+          - /url: /
+  - generic [ref=e6]:
+    - generic [ref=e9]:
+      - text:  You logged out of the secure area!
+      - link "×" [ref=e10] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e13]:
+      - heading "Login Page" [level=2] [ref=e14]
+      - heading "This is where you can log into the secure area. Enter tomsmith for the username and SuperSecretPassword for the password. If the information is wrong you should see error messages." [level=4] [ref=e15]:
+        - text: This is where you can log into the secure area. Enter
+        - emphasis [ref=e16]: tomsmith
+        - text: for the username and
+        - emphasis [ref=e17]: SuperSecretPassword
+        - text: for the password. If the information is wrong you should see error messages.
+      - generic [ref=e18]:
+        - generic [ref=e20]:
+          - generic [ref=e21] [cursor=pointer]: Username
+          - textbox [ref=e22]
+        - generic [ref=e24]:
+          - generic [ref=e25] [cursor=pointer]: Password
+          - textbox [ref=e26]
+        - button "Login" [ref=e27] [cursor=pointer]
+    - generic [ref=e29]:
+      - separator [ref=e30]
+      - generic [ref=e31]:
+        - text: Powered by
+        - link "CYDEO" [ref=e32] [cursor=pointer]:
+          - /url: https://cydeo.com/

@@ -1,0 +1,22 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - list [ref=e3]:
+      - listitem [ref=e4]:
+        - link "Home" [ref=e5] [cursor=pointer]:
+          - /url: /
+  - generic [ref=e6]:
+    - generic [ref=e9]:
+      - text:  You logged into a secure area!
+      - link "×" [ref=e10] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e13]:
+      - heading "Secure Area" [level=2] [ref=e14]: Secure Area
+      - heading "Welcome to the Secure Area. When you are done click logout below." [level=4] [ref=e15]
+      - link "Logout" [ref=e16] [cursor=pointer]:
+        - /url: /logout
+    - generic [ref=e18]:
+      - separator [ref=e19]
+      - generic [ref=e20]:
+        - text: Powered by
+        - link "CYDEO" [ref=e21] [cursor=pointer]:
+          - /url: https://cydeo.com/

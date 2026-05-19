@@ -1,0 +1,169 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - list [ref=e3]:
+      - listitem [ref=e4]:
+        - link "Home" [ref=e5] [cursor=pointer]:
+          - /url: /
+  - generic [ref=e6]:
+    - generic [ref=e10]:
+      - generic [ref=e12]:
+        - heading "Test Automation Practice" [level=1] [ref=e13]
+        - heading "Available Examples" [level=2] [ref=e14]
+      - list [ref=e15]:
+        - listitem [ref=e16]:
+          - link "A/B Testing" [ref=e17] [cursor=pointer]:
+            - /url: /abtest
+        - listitem [ref=e18]:
+          - link "Add/Remove Elements" [ref=e19] [cursor=pointer]:
+            - /url: /add_remove_elements/
+        - listitem [ref=e20]:
+          - link "Autocomplete" [ref=e21] [cursor=pointer]:
+            - /url: /autocomplete
+        - listitem [ref=e22]:
+          - link "Basic Auth" [ref=e23] [cursor=pointer]:
+            - /url: /basic_auth
+          - text: "(user and pass: admin)"
+        - listitem [ref=e24]:
+          - link "Broken Images" [ref=e25] [cursor=pointer]:
+            - /url: /broken_images
+        - listitem [ref=e26]:
+          - link "Challenging DOM" [ref=e27] [cursor=pointer]:
+            - /url: /challenging_dom
+        - listitem [ref=e28]:
+          - link "Checkboxes" [ref=e29] [cursor=pointer]:
+            - /url: /checkboxes
+        - listitem [ref=e30]:
+          - link "Context Menu" [ref=e31] [cursor=pointer]:
+            - /url: /context_menu
+        - listitem [ref=e32]:
+          - link "Disappearing Elements" [ref=e33] [cursor=pointer]:
+            - /url: /disappearing_elements
+        - listitem [ref=e34]:
+          - link "Drag and Drop" [ref=e35] [cursor=pointer]:
+            - /url: /drag_and_drop
+        - listitem [ref=e36]:
+          - link "Drag and Drop Circles" [ref=e37] [cursor=pointer]:
+            - /url: /drag_and_drop_circles
+        - listitem [ref=e38]:
+          - link "Dropdown" [ref=e39] [cursor=pointer]:
+            - /url: /dropdown
+        - listitem [ref=e40]:
+          - link "Dynamic Content" [ref=e41] [cursor=pointer]:
+            - /url: /dynamic_content
+        - listitem [ref=e42]:
+          - link "Dynamic Controls" [ref=e43] [cursor=pointer]:
+            - /url: /dynamic_controls
+        - listitem [ref=e44]:
+          - link "Dynamic Loading" [ref=e45] [cursor=pointer]:
+            - /url: /dynamic_loading
+        - listitem [ref=e46]:
+          - link "Entry Ad" [ref=e47] [cursor=pointer]:
+            - /url: /entry_ad
+        - listitem [ref=e48]:
+          - link "Exit Intent" [ref=e49] [cursor=pointer]:
+            - /url: /exit_intent
+        - listitem [ref=e50]:
+          - link "File Download" [ref=e51] [cursor=pointer]:
+            - /url: /download
+        - listitem [ref=e52]:
+          - link "File Upload" [ref=e53] [cursor=pointer]:
+            - /url: /upload
+        - listitem [ref=e54]:
+          - link "Floating Menu" [ref=e55] [cursor=pointer]:
+            - /url: /floating_menu
+        - listitem [ref=e56]:
+          - link "Forgot Password" [ref=e57] [cursor=pointer]:
+            - /url: /forgot_password
+        - listitem [ref=e58]:
+          - link "Form Authentication" [ref=e59] [cursor=pointer]:
+            - /url: /login
+        - listitem [ref=e60]:
+          - link "Frames" [ref=e61] [cursor=pointer]:
+            - /url: /frames
+        - listitem [ref=e62]:
+          - link "Geolocation" [ref=e63] [cursor=pointer]:
+            - /url: /geolocation
+        - listitem [ref=e64]:
+          - link "Horizontal Slider" [ref=e65] [cursor=pointer]:
+            - /url: /horizontal_slider
+        - listitem [ref=e66]:
+          - link "Hovers" [ref=e67] [cursor=pointer]:
+            - /url: /hovers
+        - listitem [ref=e68]:
+          - link "Infinite Scroll" [ref=e69] [cursor=pointer]:
+            - /url: /infinite_scroll
+        - listitem [ref=e70]:
+          - link "Inputs" [ref=e71] [cursor=pointer]:
+            - /url: /inputs
+        - listitem [ref=e72]:
+          - link "JQuery UI Menus" [ref=e73] [cursor=pointer]:
+            - /url: /jqueryui/menu
+        - listitem [ref=e74]:
+          - link "JavaScript Alerts" [ref=e75] [cursor=pointer]:
+            - /url: /javascript_alerts
+        - listitem [ref=e76]:
+          - link "JavaScript onload event error" [ref=e77] [cursor=pointer]:
+            - /url: /javascript_error
+        - listitem [ref=e78]:
+          - link "Key Presses" [ref=e79] [cursor=pointer]:
+            - /url: /key_presses
+        - listitem [ref=e80]:
+          - link "Large & Deep DOM" [ref=e81] [cursor=pointer]:
+            - /url: /large
+        - listitem [ref=e82]:
+          - link "Multiple Buttons" [ref=e83] [cursor=pointer]:
+            - /url: /multiple_buttons
+        - listitem [ref=e84]:
+          - link "Multiple Windows" [ref=e85] [cursor=pointer]:
+            - /url: /windows
+        - listitem [ref=e86]:
+          - link "Nested Frames" [ref=e87] [cursor=pointer]:
+            - /url: /nested_frames
+        - listitem [ref=e88]:
+          - link "New tab" [ref=e89] [cursor=pointer]:
+            - /url: /open_new_tab
+        - listitem [ref=e90]:
+          - link "Notification Messages" [ref=e91] [cursor=pointer]:
+            - /url: /notification_message
+        - listitem [ref=e92]:
+          - link "Radio Buttons" [ref=e93] [cursor=pointer]:
+            - /url: /radio_buttons
+        - listitem [ref=e94]:
+          - link "Redirect Link" [ref=e95] [cursor=pointer]:
+            - /url: /redirector
+        - listitem [ref=e96]:
+          - link "Registration Form" [ref=e97] [cursor=pointer]:
+            - /url: /registration_form
+        - listitem [ref=e98]:
+          - link "Secure File Download" [ref=e99] [cursor=pointer]:
+            - /url: /download_secure
+        - listitem [ref=e100]:
+          - link "Shifting Content" [ref=e101] [cursor=pointer]:
+            - /url: /shifting_content
+        - listitem [ref=e102]:
+          - link "Sign Up For Mailing List" [ref=e103] [cursor=pointer]:
+            - /url: /sign_up
+        - listitem [ref=e104]:
+          - link "Slow Resources" [ref=e105] [cursor=pointer]:
+            - /url: /slow
+        - listitem [ref=e106]:
+          - link "Sortable Data Tables" [ref=e107] [cursor=pointer]:
+            - /url: /tables
+        - listitem [ref=e108]:
+          - link "Status Codes" [ref=e109] [cursor=pointer]:
+            - /url: /status_codes
+        - listitem [ref=e110]:
+          - link "Typos" [ref=e111] [cursor=pointer]:
+            - /url: /typos
+        - listitem [ref=e112]:
+          - link "WYSIWYG Editor" [ref=e113] [cursor=pointer]:
+            - /url: /tinymce
+        - listitem [ref=e114]:
+          - link "Web Tables" [ref=e115] [cursor=pointer]:
+            - /url: /web-tables
+    - generic [ref=e117]:
+      - separator [ref=e118]
+      - generic [ref=e119]:
+        - text: Powered by
+        - link "CYDEO" [ref=e120] [cursor=pointer]:
+          - /url: https://cydeo.com/
