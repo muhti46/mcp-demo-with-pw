@@ -18,27 +18,19 @@ pipeline {
             }
         }
 
-        stage('Run Cucumber Tests') {
-            agent {
-                dockerfile {
-                    filename 'Dockerfile'
-                    args '-v /tmp:/tmp'
-                    reuseNode true
-                }
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm ci'
             }
+        }
+
+        stage('Run Cucumber Tests') {
             steps {
                 sh 'npm run test:cucumber'
             }
         }
 
         stage('Generate Allure Report') {
-            agent {
-                dockerfile {
-                    filename 'Dockerfile'
-                    args '-v /tmp:/tmp'
-                    reuseNode true
-                }
-            }
             steps {
                 sh 'npm run allure:generate'
             }
