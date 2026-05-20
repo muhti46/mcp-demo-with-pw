@@ -12,7 +12,6 @@ pipeline {
     environment {
         ALLURE_RESULTS_DIR = "${WORKSPACE}/allure-results"
         ALLURE_REPORT_DIR = "${WORKSPACE}/allure-report"
-        JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
     }
 
     stages {
