@@ -48,13 +48,15 @@ pipeline {
 
     post {
         always {
-            node {
-                script {
+            script {
+                try {
                     if (fileExists('allure-results')) {
                         allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
                     } else {
                         echo 'allure-results bulunamadi, Allure adimi atlandi.'
                     }
+                } catch (Exception e) {
+                    echo "Post actions atlandi: ${e.getMessage()}"
                 }
             }
         }
