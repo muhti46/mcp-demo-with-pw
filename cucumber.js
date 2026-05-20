@@ -5,6 +5,7 @@ module.exports = {
     format: [
       "@cucumber/pretty-formatter",
       "html:cucumber-report.html",
+      "json:cucumber-report.json",
       "allure-cucumberjs/reporter",
     ],
     paths: ["features/**/*.feature"],

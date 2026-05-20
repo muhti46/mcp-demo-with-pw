@@ -56,16 +56,13 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: 'allure-results/**,allure-report/**,cucumber-report.html,playwright-report/**', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'allure-results/**,allure-report/**,cucumber-report.html,cucumber-report.json,playwright-report/**', allowEmptyArchive: true
             allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-            publishHTML(target: [
-                allowMissing: false,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: '.',
-                reportFiles: 'cucumber-report.html',
-                reportName: 'Cucumber HTML Report'
-            ])
+            cucumberReport(
+                fileIncludePattern: '**/cucumber-report.json',
+                jsonReportDirectory: '.',
+                pendingItemsNotMarkedAsFailures: true
+            )
         }
         success {
             echo 'All tests passed!'
