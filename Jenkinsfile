@@ -24,6 +24,12 @@ pipeline {
             }
         }
 
+        stage('Install Playwright Browser') {
+            steps {
+                sh 'npx playwright install chromium'
+            }
+        }
+
         stage('Run Cucumber Tests') {
             steps {
                 sh 'node ./node_modules/@cucumber/cucumber/bin/cucumber.js'
@@ -33,17 +39,7 @@ pipeline {
 
     post {
         always {
-            script {
-                try {
-                    if (fileExists('allure-results')) {
-                        allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-                    } else {
-                        echo 'allure-results bulunamadi, Allure adimi atlandi.'
-                    }
-                } catch (Exception e) {
-                    echo "Post actions atlandi: ${e.getMessage()}"
-                }
-            }
+            archiveArtifacts artifacts: 'allure-results/**,cucumber-report.html,playwright-report/**', allowEmptyArchive: true
         }
         success {
             echo 'All tests passed!'
