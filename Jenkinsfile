@@ -58,6 +58,14 @@ pipeline {
         always {
             archiveArtifacts artifacts: 'allure-results/**,allure-report/**,cucumber-report.html,playwright-report/**', allowEmptyArchive: true
             allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+            publishHTML(target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: '.',
+                reportFiles: 'cucumber-report.html',
+                reportName: 'Cucumber HTML Report'
+            ])
         }
         success {
             echo 'All tests passed!'
