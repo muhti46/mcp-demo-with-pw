@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        dockerfile {
-            filename 'Dockerfile'
-            args '-v /tmp:/tmp'
-        }
-    }
+    agent any
 
     options {
         skipDefaultCheckout(true)
@@ -25,12 +20,26 @@ pipeline {
         }
 
         stage('Run Cucumber Tests') {
+            agent {
+                dockerfile {
+                    filename 'Dockerfile'
+                    args '-v /tmp:/tmp'
+                    reuseNode true
+                }
+            }
             steps {
                 sh 'npm run test:cucumber'
             }
         }
 
         stage('Generate Allure Report') {
+            agent {
+                dockerfile {
+                    filename 'Dockerfile'
+                    args '-v /tmp:/tmp'
+                    reuseNode true
+                }
+            }
             steps {
                 sh 'npm run allure:generate'
             }
@@ -39,11 +48,13 @@ pipeline {
 
     post {
         always {
-            script {
-                if (fileExists('allure-results')) {
-                    allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-                } else {
-                    echo 'allure-results bulunamadi, Allure adimi atlandi.'
+            node {
+                script {
+                    if (fileExists('allure-results')) {
+                        allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+                    } else {
+                        echo 'allure-results bulunamadi, Allure adimi atlandi.'
+                    }
                 }
             }
         }
