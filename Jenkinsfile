@@ -26,13 +26,7 @@ pipeline {
 
         stage('Run Cucumber Tests') {
             steps {
-                sh 'npm run test:cucumber'
-            }
-        }
-
-        stage('Generate Allure Report') {
-            steps {
-                sh 'npm run allure:generate'
+                sh 'node ./node_modules/@cucumber/cucumber/bin/cucumber.js'
             }
         }
     }
