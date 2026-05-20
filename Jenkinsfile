@@ -28,10 +28,7 @@ pipeline {
 
     post {
         always {
-            
-                allure includeProperties: false, jdk: '', 
-                results: [[path: 'allure-results']]
-            }
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
         }
         success {
             echo 'All tests passed!'
@@ -40,4 +37,4 @@ pipeline {
             echo 'Some tests failed!'
         }
     }
-
+}
