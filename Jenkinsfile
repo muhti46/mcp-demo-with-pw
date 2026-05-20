@@ -40,4 +40,4 @@ pipeline {
             echo 'Some tests failed!'
         }
     }
-}
+
