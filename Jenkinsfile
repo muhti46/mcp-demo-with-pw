@@ -26,7 +26,7 @@ pipeline {
 
         stage('Install Playwright Browser') {
             steps {
-                sh 'node ./node_modules/@playwright/install/cli.js install chromium'
+                sh 'node ./node_modules/@playwright/test/cli.js install chromium'
             }
         }
 
