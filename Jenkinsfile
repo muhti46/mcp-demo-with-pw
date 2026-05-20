@@ -52,16 +52,17 @@ pipeline {
                 }
             }
         }
+
+        stage('Generate Allure Report') {
+            steps {
+                sh 'npx allure generate ./allure-results -o ./allure-report --clean'
+            }
+        }
     }
 
     post {
         always {
-            archiveArtifacts artifacts: 'allure-results/**,cucumber-report.html,playwright-report/**', allowEmptyArchive: true
-            script {
-                node {
-                    allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-                }
-            }
+            archiveArtifacts artifacts: 'allure-results/**,allure-report/**,cucumber-report.html,playwright-report/**', allowEmptyArchive: true
         }
         success {
             echo 'All tests passed!'
