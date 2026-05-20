@@ -6,6 +6,10 @@ pipeline {
         }
     }
 
+    options {
+        skipDefaultCheckout(true)
+    }
+
     environment {
         ALLURE_RESULTS_DIR = "${WORKSPACE}/allure-results"
         ALLURE_REPORT_DIR = "${WORKSPACE}/allure-report"
@@ -13,6 +17,13 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                sh 'git config --global --add safe.directory "$WORKSPACE" || true'
+                checkout scm
+            }
+        }
+
         stage('Run Cucumber Tests') {
             steps {
                 sh 'npm run test:cucumber'
@@ -28,7 +39,13 @@ pipeline {
 
     post {
         always {
-            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+            script {
+                if (fileExists('allure-results')) {
+                    allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+                } else {
+                    echo 'allure-results bulunamadi, Allure adimi atlandi.'
+                }
+            }
         }
         success {
             echo 'All tests passed!'
