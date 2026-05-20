@@ -10,6 +10,8 @@
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
+    "pretest:cucumber": "npm run allure:clean",
+    "pretest:cucumber:headed": "npm run allure:clean",
     "test:cucumber": "cucumber-js",
     "test:cucumber:headed": "cross-env HEADED=true cucumber-js",
     "test:allure": "cucumber-js",
