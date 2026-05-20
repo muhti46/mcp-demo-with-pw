@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    parameters {
+        booleanParam(name: 'HEADED', defaultValue: false, description: 'Tarayiciyi headed modda calistir (Linux icin xvfb gerekir).')
+    }
+
     options {
         skipDefaultCheckout(true)
     }
@@ -32,7 +36,20 @@ pipeline {
 
         stage('Run Cucumber Tests') {
             steps {
-                sh 'node ./node_modules/@cucumber/cucumber/bin/cucumber.js'
+                script {
+                    if (params.HEADED) {
+                        sh '''
+                            if command -v xvfb-run >/dev/null 2>&1; then
+                                HEADED=true xvfb-run -a node ./node_modules/@cucumber/cucumber/bin/cucumber.js
+                            else
+                                echo "HEADED=true secildi ama xvfb-run bulunamadi. Kurulum icin: apt-get update && apt-get install -y xvfb"
+                                exit 1
+                            fi
+                        '''
+                    } else {
+                        sh 'node ./node_modules/@cucumber/cucumber/bin/cucumber.js'
+                    }
+                }
             }
         }
     }

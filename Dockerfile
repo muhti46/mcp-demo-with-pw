@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     gnupg \
     ca-certificates \
     openjdk-17-jre-headless \
+    xvfb \
     && rm -rf /var/lib/apt/lists/*
 
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
