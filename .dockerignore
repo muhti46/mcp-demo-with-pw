@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+allure-results
+allure-report
+cucumber-report.html
+dist
+.git
+.gitignore
+*.md

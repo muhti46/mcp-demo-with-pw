@@ -1,0 +1,7 @@
+node_modules/
+dist/
+allure-results/
+allure-report/
+cucumber-report.html
+test-results/
+playwright-report/

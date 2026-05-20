@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["ES2022"],
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node"],
+    "paths": {
+      "@support/*": ["./support/*"],
+      "@steps/*": ["./step_definitions/*"]
+    },
+    "baseUrl": "."
+  },
+  "include": ["features/**/*.ts", "pages/**/*.ts", "step_definitions/**/*.ts", "support/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

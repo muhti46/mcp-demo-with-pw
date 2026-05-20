@@ -9,13 +9,29 @@
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",
-    "test:ui": "playwright test --ui"
+    "test:ui": "playwright test --ui",
+    "test:cucumber": "cucumber-js",
+    "test:cucumber:headed": "cross-env HEADED=true cucumber-js",
+    "test:allure": "cucumber-js",
+    "allure:clean": "node -e \"if (require('fs').existsSync('allure-results')) require('fs').rmSync('allure-results', { recursive: true })\"",
+    "allure:generate": "allure generate ./allure-results -o ./allure-report --clean",
+    "allure:open": "allure open ./allure-report",
+    "allure:report": "npm run allure:clean && npm run test:allure && npm run allure:generate && npm run allure:open"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.59.1"
+    "@cucumber/cucumber": "^12.9.0",
+    "@cucumber/html-formatter": "^23.1.0",
+    "@cucumber/pretty-formatter": "^3.3.1",
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.9.0",
+    "allure-commandline": "^2.41.0",
+    "allure-cucumberjs": "^3.9.0",
+    "cross-env": "^10.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
   }
 }
