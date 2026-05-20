@@ -57,7 +57,7 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'allure-results/**,allure-report/**,cucumber-report.html,playwright-report/**', allowEmptyArchive: true
-            allure includeProperties: false, jdk: '', toolName: 'allure-default', results: [[path: 'allure-results']]
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
         }
         success {
             echo 'All tests passed!'
