@@ -1,43 +1,21 @@
 pipeline {
-    agent any
-
-    tools {
-        nodejs 'NodeJS'
+    agent {
+        dockerfile {
+            filename 'Dockerfile'
+            args '-v /tmp:/tmp'
+        }
     }
 
     environment {
         ALLURE_RESULTS_DIR = "${WORKSPACE}/allure-results"
         ALLURE_REPORT_DIR = "${WORKSPACE}/allure-report"
+        JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm ci'
-            }
-        }
-
-        stage('Install Playwright Browsers') {
-            steps {
-                sh 'npx playwright install chromium --with-deps'
-            }
-        }
-
         stage('Run Cucumber Tests') {
             steps {
                 sh 'npm run test:cucumber'
-            }
-            post {
-                always {
-                    junit allowEmptyResults: true,
-                        testResults: 'allure-results/**/*.xml'
-                }
             }
         }
 
