@@ -59,7 +59,7 @@ pipeline {
             archiveArtifacts artifacts: 'allure-results/**,allure-report/**,cucumber-report.html,cucumber-report.json,playwright-report/**', allowEmptyArchive: true
             allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
             script {
-                cucumberReport(
+                cucumber(
                     fileIncludePattern: '**/cucumber-report.json',
                     jsonReportDirectory: '.',
                     pendingItemsNotMarkedAsFailures: true
